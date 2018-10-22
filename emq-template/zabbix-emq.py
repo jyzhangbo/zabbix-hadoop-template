@@ -70,13 +70,13 @@ def write_data_to_file(json, file_path, nodename_in_zabbix):
 
 
 def usage():
-    print("Usage: emq_node_id = %s; emq_node_port = %s; ")
+    print("Usage: emq_node_id = %s; emq_node_port = %s; nodename_in_zabbix = %s " % (emq_node_ip,emq_node_port,nodename_in_zabbix))
 
 
 if __name__ == '__main__':
 
     logging.basicConfig(level=logging.INFO)
-    if len(sys.argv) == 4:
+    if len(sys.argv) == 5:
         emq_node_ip = sys.argv[1]
         emq_node_port = sys.argv[2]
         file_path = sys.argv[3]
