@@ -1,11 +1,9 @@
 __author__ = 'zhangbo'
 
 import json
-import urllib
 import logging
 import sys
-import time
-from urllib import request
+import urllib2
 
 # ---------------------------------
 # Generate URL
@@ -32,10 +30,9 @@ def get_url(server_name, listen_port):
 # Load URL
 # ---------------------------------
 def load_url_as_dictionary(url):
-
-    req = request.Request(url)
+    req = urllib2.Request(url)
     req.add_header("Authorization","Basic YWRtaW46cHVibGlj")
-    return json.load(request.urlopen(req))
+    return json.load(urllib2.urlopen(req))
 
 
 def json_processing(server_name, listen_port):
@@ -59,6 +56,7 @@ def json_processing(server_name, listen_port):
 
     namenode_dict['nodes_running'] = running_node
     namenode_dict['nodes_dead'] = dead_node
+    namenode_dict['nodes_running_name'] = nodes_name
     return namenode_dict
 
 

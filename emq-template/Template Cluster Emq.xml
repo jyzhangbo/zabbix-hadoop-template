@@ -158,7 +158,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>cluster-emq-plugin.sh[{$EMQ_NODE_HOST},{$EMQ_NODE_PORT}]</key>
+                    <key>cluster-emq-plugin.sh[{$EMQ_NODE_HOST},{$EMQ_NODE_PORT},{$NAME_IN_ZABBIX}]</key>
                     <delay>120</delay>
                     <history>10</history>
                     <trends>0</trends>
@@ -249,6 +249,10 @@
                 <macro>
                     <macro>{$EMQ_NODE_PORT}</macro>
                     <value>emq_node_port</value>
+                </macro>
+                <macro>
+                    <macro>{$NAME_IN_ZABBIX}</macro>
+                    <value>name_in_zabbix</value>
                 </macro>
             </macros>
             <templates/>
